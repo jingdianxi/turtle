@@ -1,15 +1,15 @@
 package com.jingdianxi.entities;
 /**
  * 海龟类
- * @param x 横坐标
- * @param y 纵坐标
- * @param head 笔前进方向,0向右,1向下,2向左,3向上
- * @param isDown 笔朝下状态
  */
 public class Turtle {
+	// 横坐标
 	private int x;
+	// 纵坐标
 	private int y;
+	// 笔前进方向,0向右,1向下,2向左,3向上
 	private int head;
+	// 笔朝下状态
 	private boolean isDown;
 	// 笔朝下
 	public void setDown() {
@@ -27,7 +27,11 @@ public class Turtle {
 	public void turnRight() {
 		this.head = (this.head + 1) % 4;
 	}
-	// 移动
+	/**
+	 * 移动
+	 * @param step 步长
+	 * @param graph 图像
+	 */
 	public void move(int step, Graph graph) {
 		// 判断方向
 		switch (this.head) {

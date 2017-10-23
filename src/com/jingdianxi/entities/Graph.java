@@ -1,9 +1,9 @@
 package com.jingdianxi.entities;
 /**
  * 图像类
- * @param point 坐标点,0无轨迹,1有轨迹
  */
 public class Graph {
+	// 坐标点,0无轨迹,1有轨迹
 	private int[][] point = new int[50][50];
 	/**
 	 * 在指定点作标记
