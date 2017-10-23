@@ -26,15 +26,9 @@ public class Turtle {
 	public int getHead() {
 		return head;
 	}
-//	public void setHead(int head) {
-//		this.head = head;
-//	}
 	public boolean isDown() {
 		return isDown;
 	}
-//	public void setDown(boolean isDown) {
-//		this.isDown = isDown;
-//	}
 	// ±Ê³¯ÏÂ
 	public void setDown() {
 		this.isDown = true;
@@ -52,7 +46,7 @@ public class Turtle {
 		this.head = (this.head + 1) % 4;
 	}
 	// ÒÆ¶¯
-	public void move(int step) {
+	public void move(boolean isDown, int head, int step) {
 		
 	}
 }

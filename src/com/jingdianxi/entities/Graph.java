@@ -5,9 +5,6 @@ package com.jingdianxi.entities;
  */
 public class Graph {
 	private int[][] point = new int[50][50];
-//	public int[][] getPoint() {
-//		return point;
-//	}
 	public void setPoint(int[][] point) {
 		this.point = point;
 	}

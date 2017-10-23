@@ -47,7 +47,7 @@ public class Start {
 			case 2:
 				if (order[0].equals("5")) {
 					try {
-						turtle.move(Integer.parseInt(order[1]));
+						turtle.move(turtle.isDown(), turtle.getHead(), Integer.parseInt(order[1]));
 					} catch (Exception exception) {
 						// TODO: handle exception
 						System.out.println("Invalid command");
