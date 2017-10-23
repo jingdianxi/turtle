@@ -11,24 +11,6 @@ public class Turtle {
 	private int y;
 	private int head;
 	private boolean isDown;
-	public int getX() {
-		return x;
-	}
-	public void setX(int x) {
-		this.x = x;
-	}
-	public int getY() {
-		return y;
-	}
-	public void setY(int y) {
-		this.y = y;
-	}
-	public int getHead() {
-		return head;
-	}
-	public boolean isDown() {
-		return isDown;
-	}
 	// 笔朝下
 	public void setDown() {
 		this.isDown = true;
@@ -53,7 +35,7 @@ public class Turtle {
 		case 0:
 			// 判断越界
 			if((this.x + step) > 49) {
-				step = 49 - this.x;
+				step = 50 - this.x;
 			}
 			// 完成轨迹
 			if (this.isDown) {
@@ -62,13 +44,13 @@ public class Turtle {
 				}
 			}
 			// 移动位置
-			this.x += step;
+			this.x += step - 1;
 			break;
 		// 向下
 		case 1:
 			// 判断越界
 			if((this.y + step) > 49) {
-				step = 49 - this.y;
+				step = 50 - this.y;
 			}
 			// 完成轨迹
 			if (this.isDown) {
@@ -77,13 +59,13 @@ public class Turtle {
 				}
 			}
 			// 移动位置
-			this.y += step;
+			this.y += step - 1;
 			break;
 		// 向左
 		case 2:
 			// 判断越界
 			if((this.x - step) < 0) {
-				step = this.x;
+				step = this.x + 1;
 			}
 			// 完成轨迹
 			if (this.isDown) {
@@ -92,13 +74,13 @@ public class Turtle {
 				}
 			}
 			// 移动位置
-			this.x -= step;
+			this.x -= step - 1;
 			break;
 		// 向上
 		case 3:
 			// 判断越界
 			if((this.y - step) < 0) {
-				step = this.y;
+				step = this.y + 1;
 			}
 			// 完成轨迹
 			if (this.isDown) {
@@ -107,7 +89,7 @@ public class Turtle {
 				}
 			}
 			// 移动位置
-			this.y -= step;
+			this.y -= step - 1;
 			break;
 		}		
 	}
