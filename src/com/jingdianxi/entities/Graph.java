@@ -5,8 +5,13 @@ package com.jingdianxi.entities;
  */
 public class Graph {
 	private int[][] point = new int[50][50];
-	public void setPoint(int[][] point) {
-		this.point = point;
+	/**
+	 * 在指定点作标记
+	 * @param x 横坐标
+	 * @param y 纵坐标
+	 */
+	public void setPoint(int x, int y) {
+		point[x][y] = 1;
 	}
 	/**
 	 * 打印图像

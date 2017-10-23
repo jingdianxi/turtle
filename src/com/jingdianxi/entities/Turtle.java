@@ -46,7 +46,69 @@ public class Turtle {
 		this.head = (this.head + 1) % 4;
 	}
 	// 移动
-	public void move(boolean isDown, int head, int step) {
-		
+	public void move(int step, Graph graph) {
+		// 判断方向
+		switch (this.head) {
+		// 向右
+		case 0:
+			// 判断越界
+			if((this.x + step) > 49) {
+				step = 49 - this.x;
+			}
+			// 完成轨迹
+			if (this.isDown) {
+				for (int i = 0; i < step; i++) {
+					graph.setPoint(this.x + i, this.y);
+				}
+			}
+			// 移动位置
+			this.x += step;
+			break;
+		// 向下
+		case 1:
+			// 判断越界
+			if((this.y + step) > 49) {
+				step = 49 - this.y;
+			}
+			// 完成轨迹
+			if (this.isDown) {
+				for (int i = 0; i < step; i++) {
+					graph.setPoint(this.x, this.y + i);
+				}
+			}
+			// 移动位置
+			this.y += step;
+			break;
+		// 向左
+		case 2:
+			// 判断越界
+			if((this.x - step) < 0) {
+				step = this.x;
+			}
+			// 完成轨迹
+			if (this.isDown) {
+				for (int i = 0; i < step; i++) {
+					graph.setPoint(this.x - i, this.y);
+				}
+			}
+			// 移动位置
+			this.x -= step;
+			break;
+		// 向上
+		case 3:
+			// 判断越界
+			if((this.y - step) < 0) {
+				step = this.y;
+			}
+			// 完成轨迹
+			if (this.isDown) {
+				for (int i = 0; i < step; i++) {
+					graph.setPoint(this.x, this.y - i);
+				}
+			}
+			// 移动位置
+			this.y -= step;
+			break;
+		}		
 	}
 }
